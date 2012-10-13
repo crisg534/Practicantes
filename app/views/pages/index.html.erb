@@ -1,4 +1,7 @@
 <h1>Practicantes</h1>
 <p>Find me in app/views/pages/index.html.erb</p>
-<p>log out </p>
-<%= link_to "Sign Out", destroy_student_session_path, :method => :delete ,:class=>"btn btn-info" %>
+
+<%- if student_signed_in? %>
+	<p>log out </p>
+	<%= link_to "Sign Out", destroy_student_session_path, :method => :delete ,:class=>"btn btn-info" %>
+<% end %>
