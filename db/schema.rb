@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121013191712) do
+ActiveRecord::Schema.define(:version => 20121013192109) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -99,43 +99,11 @@ ActiveRecord::Schema.define(:version => 20121013191712) do
   add_index "enterprises", ["email"], :name => "index_enterprises_on_email", :unique => true
   add_index "enterprises", ["reset_password_token"], :name => "index_enterprises_on_reset_password_token", :unique => true
 
-  create_table "item_pictures", :force => true do |t|
-    t.string   "url"
-    t.integer  "item_id"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
-    t.string   "picture_type"
-    t.string   "big_url"
-    t.string   "small_url"
-  end
-
-  create_table "items", :force => true do |t|
-    t.string   "name"
-    t.integer  "room_id"
-    t.datetime "created_at",               :null => false
-    t.datetime "updated_at",               :null => false
-    t.string   "make_and_model"
-    t.string   "serial"
-    t.string   "cost"
-    t.date     "date_purchase"
-    t.string   "place_purchase"
-    t.string   "upc"
-    t.string   "serial_image"
-    t.string   "warranty"
-    t.string   "extended_warranty"
-    t.integer  "status"
-    t.string   "warranty_provider"
-    t.date     "warranty_start_date"
-    t.string   "default_image"
-    t.string   "warranty_expiration_date"
-  end
-
-  create_table "notes", :force => true do |t|
-    t.string   "title"
-    t.string   "description"
-    t.integer  "item_id"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+  create_table "offer_profiles", :force => true do |t|
+    t.integer  "offer_id"
+    t.integer  "profile_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "offers", :force => true do |t|
@@ -155,29 +123,11 @@ ActiveRecord::Schema.define(:version => 20121013191712) do
     t.datetime "updated_at", :null => false
   end
 
-  create_table "receipts", :force => true do |t|
-    t.string   "url"
-    t.integer  "item_id"
+  create_table "student_profiles", :force => true do |t|
+    t.integer  "student_id"
+    t.integer  "profile_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
-  end
-
-  create_table "reminders", :force => true do |t|
-    t.integer  "item_id"
-    t.datetime "date"
-    t.string   "title"
-    t.string   "content"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-    t.string   "alert"
-  end
-
-  create_table "rooms", :force => true do |t|
-    t.string   "name"
-    t.integer  "user_id"
-    t.datetime "created_at",                 :null => false
-    t.datetime "updated_at",                 :null => false
-    t.integer  "items_count", :default => 0
   end
 
   create_table "students", :force => true do |t|
@@ -187,59 +137,8 @@ ActiveRecord::Schema.define(:version => 20121013191712) do
     t.string   "email"
     t.string   "phone"
     t.integer  "city_id"
-    t.datetime "created_at",                             :null => false
-    t.datetime "updated_at",                             :null => false
-    t.string   "encrypted_password",     :default => "", :null => false
-    t.string   "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          :default => 0
-    t.datetime "current_sign_in_at"
-    t.datetime "last_sign_in_at"
-    t.string   "current_sign_in_ip"
-    t.string   "last_sign_in_ip"
-  end
-
-  add_index "students", ["email"], :name => "index_students_on_email", :unique => true
-  add_index "students", ["reset_password_token"], :name => "index_students_on_reset_password_token", :unique => true
-
-  create_table "users", :force => true do |t|
-    t.string   "email",                  :default => "", :null => false
-    t.string   "encrypted_password",     :default => "", :null => false
-    t.string   "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          :default => 0
-    t.datetime "current_sign_in_at"
-    t.datetime "last_sign_in_at"
-    t.string   "current_sign_in_ip"
-    t.string   "last_sign_in_ip"
-    t.string   "authentication_token"
-    t.datetime "created_at",                             :null => false
-    t.datetime "updated_at",                             :null => false
-    t.string   "username"
-    t.string   "first_name"
-    t.string   "last_name"
-    t.string   "address"
-    t.string   "address2"
-    t.string   "birthday"
-    t.string   "gender"
-    t.string   "zip_postal"
-    t.string   "state"
-    t.string   "image_url"
-    t.string   "city"
-  end
-
-  add_index "users", ["email"], :name => "index_users_on_email", :unique => true
-  add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
-
-  create_table "warranties", :force => true do |t|
-    t.string   "name"
-    t.integer  "amount"
-    t.integer  "item_id"
-    t.datetime "created_at",               :null => false
-    t.datetime "updated_at",               :null => false
-    t.string   "warranty_expiration_date"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
   end
 
 end

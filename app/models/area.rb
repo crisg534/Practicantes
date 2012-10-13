@@ -3,5 +3,4 @@ class Area < ActiveRecord::Base
   
   #relations
   has_many :careers
-  
 end
