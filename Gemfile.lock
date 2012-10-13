@@ -235,6 +235,6 @@ DEPENDENCIES
   simplecov (= 0.6.4)
   taps (= 0.3.23)
   turn (= 0.9.6)
-  twitter-bootstrap-rails
+  twitter-bootstrap-rails (= 2.1.3)
   uglifier (>= 1.0.3)
   wirble (= 0.1.3)
