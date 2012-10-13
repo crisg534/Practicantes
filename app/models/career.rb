@@ -3,4 +3,5 @@ class Career < ActiveRecord::Base
   
   #relations
   belongs_to :area
+  has_many :profiles
 end
