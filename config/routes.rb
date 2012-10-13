@@ -1,4 +1,6 @@
 Practicantes::Application.routes.draw do
+  devise_for :enterprises
+
   resources :cities
 
   resources :enterprises
