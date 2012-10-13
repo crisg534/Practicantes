@@ -1,0 +1,37 @@
+%h2 Search form 
+
+
+= form_tag url: search_path, method: :post do |f|
+  
+  Yo sé
+  = text_field_tag :skills
+
+  Yo quiero aprender
+  = text_field_tag :wanted_skills
+
+  = link_to "Búsqueda Avanzada", "#"
+  
+  %div
+    %strong Remuneración?
+    %br
+    = radio_button_tag :payment, 'si'
+    Si 
+    = radio_button_tag :payment, 'no'
+    No 
+    = radio_button_tag :payment, '', :checked
+    No importa 
+
+  %div
+    %strong Jornada
+    %br
+    - ['medio tiempo', 'tiempo completo'].each do |time|
+      = radio_button_tag :worktime, time
+      = time.humanize
+
+  %div
+    %strong Ciudad
+    %br
+    = text_field_tag :wanted_skills
+
+
+      
