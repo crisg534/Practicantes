@@ -23,6 +23,6 @@
     = f.text_field :phone
   .field
     = f.label :city_id
-    = f.number_field :city_id
+    = f.collection_select(:city_id, City.all, :id, :name)
   .actions
     = f.submit 'Save'

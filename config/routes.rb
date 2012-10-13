@@ -6,7 +6,7 @@ Practicantes::Application.routes.draw do
   resources :cities
 
   resources :enterprises
-
+  resources :students
   resources :careers
 
   resources :areas
