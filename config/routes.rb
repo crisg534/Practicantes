@@ -1,4 +1,6 @@
 Practicantes::Application.routes.draw do
+  resources :students
+
   resources :offers
 
   resources :cities
