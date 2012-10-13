@@ -1,11 +1,4 @@
-class Student < ActiveRecord::Base
-  
-  # Relations
-  has_many :student_profiles
-  has_many :profiles, through: :student_profile
-
-  belongs_to :career
-
+class Enterprise < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,
   # :lockable, :timeoutable and :omniauthable
@@ -13,7 +6,13 @@ class Student < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me, 
-  				  :availability, :city_id, :college, :name, :phone 
-
+  attr_accessible :email, :password, :password_confirmation, :remember_me
+  attr_accessible :address, :contact_name, :email, :name, :nit, :phone, :url
+<<<<<<< HEAD
+  belogns_to :offer
+=======
+  
+  #relations
+  has_many :offers
+>>>>>>> 3209aa4c100e17d80f12eb5e040da8b894e94e59
 end

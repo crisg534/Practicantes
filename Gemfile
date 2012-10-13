@@ -28,7 +28,6 @@ group :development, :test do
   gem 'awesome_print',      '1.0.2'  # used to look better the console
   gem 'heroku',             '2.30.2' # Used for heroku cli
   gem 'taps',               '0.3.23' # Used for heroku cli
-  gem "mocha"
   gem 'haml-rails',         '0.3.4'
   gem 'annotate',   '2.5.0'
   gem "factory_girl_rails"
