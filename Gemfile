@@ -10,7 +10,7 @@ gem 'jquery-rails',           '2.1.2'
 gem 'jquery-ui-rails',        '2.0.0'
 gem 'devise',                 '2.1.2'
 gem 'haml',                   '>= 3.0.0'
-gem "twitter-bootstrap-rails"
+gem "twitter-bootstrap-rails",'2.1.3'
 gem 'meta_search',            '~> 1.1.3'
 
 # Gems used only for assets and not required
