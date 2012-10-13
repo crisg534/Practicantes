@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121013184900) do
+ActiveRecord::Schema.define(:version => 20121013192109) do
 
   create_table "areas", :force => true do |t|
     t.string   "name"
@@ -31,17 +31,6 @@ ActiveRecord::Schema.define(:version => 20121013184900) do
     t.string   "country"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
-  end
-
-  create_table "empresas", :force => true do |t|
-    t.string   "nombre"
-    t.integer  "nit"
-    t.integer  "telefono"
-    t.string   "email"
-    t.string   "url"
-    t.string   "nombre_contacto"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
   end
 
   create_table "enterprises", :force => true do |t|
@@ -68,12 +57,46 @@ ActiveRecord::Schema.define(:version => 20121013184900) do
   add_index "enterprises", ["email"], :name => "index_enterprises_on_email", :unique => true
   add_index "enterprises", ["reset_password_token"], :name => "index_enterprises_on_reset_password_token", :unique => true
 
+  create_table "offer_profiles", :force => true do |t|
+    t.integer  "offer_id"
+    t.integer  "profile_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "offers", :force => true do |t|
+    t.integer  "enterprise_id"
+    t.string   "name"
+    t.string   "description"
+    t.integer  "city_id"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
+
   create_table "profiles", :force => true do |t|
     t.string   "name"
     t.integer  "career_id"
     t.string   "skills"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "student_profiles", :force => true do |t|
+    t.integer  "student_id"
+    t.integer  "profile_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "students", :force => true do |t|
+    t.string   "name"
+    t.string   "college"
+    t.string   "availability"
+    t.string   "email"
+    t.string   "phone"
+    t.integer  "city_id"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
   end
 
 end

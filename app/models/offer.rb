@@ -3,5 +3,7 @@ class Offer < ActiveRecord::Base
   
   #relations
   belongs_to :enterprise
-  has_many :cities
+  belongs_to :city
+  has_many  :offer_profiles
+  has_many :profiles, though: :offer_profile
 end
