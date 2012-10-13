@@ -31,7 +31,7 @@ group :development, :test do
   gem "mocha"
   gem 'haml-rails',         '0.3.4'
   gem 'annotate',   '2.5.0'
-  gem "factory_girl_rails", "3.3.0"
+  gem "factory_girl_rails"
   gem "rails-erd"
 end
 
