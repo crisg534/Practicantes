@@ -25,6 +25,7 @@ class OffersController < ApplicationController
   # GET /offers/new.json
   def new
     @offer = Offer.new
+    @cities = City.find(:all, :order => 'name').map{|x| [x.name, x.id]}
 
     respond_to do |format|
       format.html # new.html.erb
