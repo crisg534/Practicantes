@@ -1,4 +1,10 @@
 Practicantes::Application.routes.draw do
+  resources :enterprises
+
+  resources :careers
+
+  resources :areas
+
   get "pages/index"
 
   # The priority is based upon order of creation:

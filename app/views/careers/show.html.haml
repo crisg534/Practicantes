@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @career.name
+%p
+  %b Area:
+  = @career.area_id
+
+= link_to 'Edit', edit_career_path(@career)
+\|
+= link_to 'Back', careers_path
