@@ -1,0 +1,18 @@
+%p#notice= notice
+
+%p
+  %b Enterprise:
+  = @offer.enterprise_id
+%p
+  %b Name:
+  = @offer.name
+%p
+  %b Description:
+  = @offer.description
+%p
+  %b City:
+  = @offer.city_id
+
+= link_to 'Edit', edit_offer_path(@offer)
+\|
+= link_to 'Back', offers_path

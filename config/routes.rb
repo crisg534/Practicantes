@@ -1,5 +1,7 @@
 Practicantes::Application.routes.draw do
-  resources :profiles
+  resources :offers
+
+  resources :cities
 
   resources :enterprises
 
