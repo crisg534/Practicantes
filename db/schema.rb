@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121013192109) do
+ActiveRecord::Schema.define(:version => 20121013213928) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -73,6 +73,17 @@ ActiveRecord::Schema.define(:version => 20121013192109) do
     t.string   "country"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "empresas", :force => true do |t|
+    t.string   "nombre"
+    t.integer  "nit"
+    t.integer  "telefono"
+    t.string   "email"
+    t.string   "url"
+    t.string   "nombre_contacto"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
   end
 
   create_table "enterprises", :force => true do |t|
@@ -152,6 +163,8 @@ ActiveRecord::Schema.define(:version => 20121013192109) do
     t.integer  "city_id"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
+    t.string   "skills"
+    t.string   "wanted_skills"
   end
 
   create_table "profiles", :force => true do |t|
@@ -190,8 +203,10 @@ ActiveRecord::Schema.define(:version => 20121013192109) do
   create_table "student_profiles", :force => true do |t|
     t.integer  "student_id"
     t.integer  "profile_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+    t.string   "skills"
+    t.string   "wanted_skills"
   end
 
   create_table "students", :force => true do |t|
@@ -242,6 +257,7 @@ ActiveRecord::Schema.define(:version => 20121013192109) do
     t.string   "state"
     t.string   "image_url"
     t.string   "city"
+    t.integer  "role_id",                :default => 1
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
