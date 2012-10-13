@@ -3,7 +3,7 @@ class Student < ActiveRecord::Base
 
   # Relations
   has_many :student_profiles
-  has_many :profiles, though: :student_profile
+  has_many :profiles, through: :student_profile
 
   belongs_to :career
 end
