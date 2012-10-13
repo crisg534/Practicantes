@@ -1,0 +1,31 @@
+%h1 Listing enterprises
+
+%table
+  %tr
+    %th Name
+    %th Nit
+    %th Address
+    %th Phone
+    %th Email
+    %th Url
+    %th Contact name
+    %th
+    %th
+    %th
+
+  - @enterprises.each do |enterprise|
+    %tr
+      %td= enterprise.name
+      %td= enterprise.nit
+      %td= enterprise.address
+      %td= enterprise.phone
+      %td= enterprise.email
+      %td= enterprise.url
+      %td= enterprise.contact_name
+      %td= link_to 'Show', enterprise
+      %td= link_to 'Edit', edit_enterprise_path(enterprise)
+      %td= link_to 'Destroy', enterprise, :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New Enterprise', new_enterprise_path

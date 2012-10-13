@@ -1,4 +1,6 @@
 Practicantes::Application.routes.draw do
+  resources :enterprises
+
   resources :careers
 
   resources :areas
