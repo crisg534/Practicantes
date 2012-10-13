@@ -4,4 +4,11 @@
 <%- if student_signed_in? %>
 	<p>log out </p>
 	<%= link_to "Sign Out", destroy_student_session_path, :method => :delete ,:class=>"btn btn-info" %>
+	<%= link_to "Edit", edit_student_registration_path, :method => :get ,:class=>"btn btn-info" %>
+<% end %>
+
+<%- if enterprise_signed_in? %>
+	<p>log out </p>
+	<%= link_to "Sign Out", destroy_enterprise_session_path, :method => :delete ,:class=>"btn btn-info" %>
+	<%= link_to "Edit", edit_enterprise_registration_path, :method => :get ,:class=>"btn btn-info" %>
 <% end %>
