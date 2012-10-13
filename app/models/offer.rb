@@ -5,5 +5,5 @@ class Offer < ActiveRecord::Base
   belongs_to :enterprise
   belongs_to :city
   has_many  :offer_profiles
-  has_many :profiles, though: :offer_profile
+  has_many :profiles, through: :offer_profile
 end
