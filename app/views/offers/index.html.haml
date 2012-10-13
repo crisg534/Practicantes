@@ -1,0 +1,25 @@
+%h1 Listing offers
+
+%table
+  %tr
+    %th Enterprise
+    %th Name
+    %th Description
+    %th City
+    %th
+    %th
+    %th
+
+  - @offers.each do |offer|
+    %tr
+      %td= offer.enterprise_id
+      %td= offer.name
+      %td= offer.description
+      %td= offer.city_id
+      %td= link_to 'Show', offer
+      %td= link_to 'Edit', edit_offer_path(offer)
+      %td= link_to 'Destroy', offer, :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New Offer', new_offer_path
