@@ -8,4 +8,5 @@ class Enterprise < ActiveRecord::Base
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me
   attr_accessible :address, :contact_name, :email, :name, :nit, :phone, :url
+  belongs_to :offer
 end
