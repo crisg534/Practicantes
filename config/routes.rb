@@ -1,8 +1,6 @@
 Practicantes::Application.routes.draw do
-  resources :students
-
+  devise_for :enterprises
   resources :offers
-
   resources :cities
 
   resources :enterprises
