@@ -9,29 +9,34 @@
   Yo quiero aprender
   = text_field_tag :wanted_skills
 
-  = link_to "Búsqueda Avanzada", "#"
+  = link_to "Búsqueda Avanzada", "javascript:toggleAdvanced()"
   
-  %div
-    %strong Remuneración?
-    %br
-    = radio_button_tag :payment, 'si'
-    Si 
-    = radio_button_tag :payment, 'no'
-    No 
-    = radio_button_tag :payment, '', :checked
-    No importa 
+  #advanced_search{style: "display:none"}
+    %div
+      %strong Remuneración?
+      %br
+      = radio_button_tag :payment, 'si'
+      Si 
+      = radio_button_tag :payment, 'no'
+      No 
+      = radio_button_tag :payment, '', :checked
+      No importa 
+
+    %div
+      %strong Jornada
+      %br
+      - ['medio tiempo', 'tiempo completo'].each do |time|
+        = radio_button_tag :worktime, time
+        = time.humanize
+
+    %div
+      %strong Ciudad
+      %br
+      = text_field_tag :city_id
+    %div
+      %strong Perfil Profesional
+      %br
+      = text_field_tag :profile_id
 
   %div
-    %strong Jornada
-    %br
-    - ['medio tiempo', 'tiempo completo'].each do |time|
-      = radio_button_tag :worktime, time
-      = time.humanize
-
-  %div
-    %strong Ciudad
-    %br
-    = text_field_tag :wanted_skills
-
-
-      
+    = submit_tag 'Buscar'
