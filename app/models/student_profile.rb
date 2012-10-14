@@ -2,11 +2,13 @@
 #
 # Table name: student_profiles
 #
-#  id         :integer          not null, primary key
-#  student_id :integer
-#  profile_id :integer
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
+#  id            :integer          not null, primary key
+#  student_id    :integer
+#  profile_id    :integer
+#  created_at    :datetime         not null
+#  updated_at    :datetime         not null
+#  skills        :string(255)
+#  wanted_skills :string(255)
 #
 
 class StudentProfile < ActiveRecord::Base

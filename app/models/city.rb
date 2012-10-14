@@ -14,4 +14,13 @@ class City < ActiveRecord::Base
 
   #relations
   has_many :offers
+
+  scope :search, lambda { |name| search(name_contains: name).all }
+
+  acts_as_api
+
+  api_accessible :list do |template|
+    template.add :id
+    template.add :name
+  end
 end
