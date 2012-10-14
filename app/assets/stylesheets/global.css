@@ -79,7 +79,7 @@ header ul a.login:hover {
 	background-repeat: no-repeat;
 }
 
-p {
+p.hero {
 	margin: 0 auto;
 	margin-top: 120px;
 	color: #FFF;
@@ -87,6 +87,17 @@ p {
 	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
 	font-size: 30px;
 	text-shadow: 1px 1px 2px #838383;
+}
+
+.visitanos{
+	text-align: center;
+	color: #FFF;
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	margin-top: 20px;
+}
+.visitanos .icons{
+	clear: both;
+	margin-top: 5px;
 }
 
 /* Form
@@ -99,7 +110,7 @@ p {
 	width: 930px;
 	height: 62px;
 	margin: 0 auto;
-	margin-top: 84px;
+	margin-top: 54px;
 	padding-left: 20px;
 }
 
@@ -139,7 +150,7 @@ p {
 footer {
 	background: url(/assets/footer-back.png);
 	height: 50px;
-	margin-top: 270px;
+	margin-top: 200px;
 }
 
 footer ul {
