@@ -1,45 +1,93 @@
-%h2 Search form 
+.search_page
+  - content_for :javascript do  
+    = javascript_include_tag "/chosen/chosen.jquery.min"
+    = stylesheet_link_tag "/chosen/chosen"
 
-- content_for :javascript do  
-  = javascript_include_tag "/chosen/chosen.jquery.min"
-  = stylesheet_link_tag "/chosen/chosen"
+  .top_bar
+    = form_tag url: search_path, method: :post do |f|    
+      Yo sé
+      = text_field_tag :skills, params[:skills], placeholder: "Ej. Desarrollo web"
 
-= form_tag url: search_path, method: :post do |f|
-  
-  Yo sé
-  = text_field_tag :skills
+      Yo quiero aprender
+      = text_field_tag :wanted_skills, params[:wanted_skills], placeholder: "Ej. desarrollo movil"
+      = submit_tag '', :class => "search"
+      =# link_to "Búsqueda Avanzada", "javascript:toggleAdvanced()"
+  .result
+    %table{cellpadding: 0, cellspacing: 0}
+      %tr
+        %td.col_image
+          = image_tag "/assets/form_icon.png"
+        %td.col_company
+          .title
+            Diseño UX, Diseño movil
+          .company
+            Apple Inc
+        %td.col_city
+          = image_tag "/assets/location-icon.png"
+          Barranquilla
+        %td.col_price
+          = image_tag  '/assets/green-money.png'
+        %td.col_more
+          = link_to "" do
+            = image_tag '/assets/details-btn.png'
+      %tr.gray
+        %td.col_image
+          = image_tag "/assets/form_icon.png"
+        %td.col_company
+          .title
+            Diseño UX, Diseño movil
+          .company
+            Apple Inc
+        %td.col_city
+          = image_tag "/assets/location-icon.png"
+          Barranquilla
+        %td.col_price
+          = image_tag  '/assets/green-money.png'
+        %td.col_more
+          = link_to "" do
+            = image_tag '/assets/details-btn.png'
+      %tr
+        %td.col_image
+          = image_tag "/assets/form_icon.png"
+        %td.col_company
+          .title
+            Diseño UX, Diseño movil
+          .company
+            Apple Inc
+        %td.col_city
+          = image_tag "/assets/location-icon.png"
+          Barranquilla
+        %td.col_price
+          = image_tag  '/assets/green-money.png'
+        %td.col_more
+          = link_to "" do
+            = image_tag '/assets/details-btn.png'
+    / #advanced_search{style: "display:none"}
+    /   %div
+    /     %strong Remuneración?
+    /     %br
+    /     = radio_button_tag :payment, 'si'
+    /     Si 
+    /     = radio_button_tag :payment, 'no'
+    /     No 
+    /     = radio_button_tag :payment, '', :checked
+    /     No importa 
 
-  Yo quiero aprender
-  = text_field_tag :wanted_skills
+    /   %div
+    /     %strong Jornada
+    /     %br
+    /     - ['medio tiempo', 'tiempo completo'].each do |time|
+    /       = radio_button_tag :worktime, time
+    /       = time.humanize
 
-  = link_to "Búsqueda Avanzada", "javascript:toggleAdvanced()"
-  
-  #advanced_search{style: "display:none"}
+    /   %div
+    /     %strong Ciudad
+    /     %br
+    /     = select_tag :city_id_equals, options_from_collection_for_select(City.find(:all), :id, :name), {include_blank: true}
+    /   %div
+    /     %strong Perfil Profesional
+    /     %br
+    /     = select_tag :profile_id_in, options_from_collection_for_select(Profile.find(:all), :id, :name), {include_blank: true, multiple: true}
+
     %div
-      %strong Remuneración?
-      %br
-      = radio_button_tag :payment, 'si'
-      Si 
-      = radio_button_tag :payment, 'no'
-      No 
-      = radio_button_tag :payment, '', :checked
-      No importa 
-
-    %div
-      %strong Jornada
-      %br
-      - ['medio tiempo', 'tiempo completo'].each do |time|
-        = radio_button_tag :worktime, time
-        = time.humanize
-
-    %div
-      %strong Ciudad
-      %br
-      = select_tag :city_id_equals, options_from_collection_for_select(City.find(:all), :id, :name), {include_blank: true}
-    %div
-      %strong Perfil Profesional
-      %br
-      = select_tag :profile_id_in, options_from_collection_for_select(Profile.find(:all), :id, :name), {include_blank: true, multiple: true}
-
-  %div
-    = submit_tag 'Buscar'
+      

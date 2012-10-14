@@ -93,7 +93,8 @@ p.hero {
 	text-align: center;
 	color: #FFF;
 	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
-	margin-top: 20px;
+	margin-top: 50px;
+	margin-bottom: 180px;
 }
 .visitanos .icons{
 	clear: both;
@@ -125,12 +126,20 @@ p.hero {
 	margin-left: 10px;
 }
 
-#search form input.search {
-	margin-top: 9px;
-	width: 140px;
-	height: 43px;
+.search{
 	background: url(/assets/search-btn.png);
 	background-repeat: no-repeat;
+	width: 140px;
+	height: 43px;
+	text-align: center;
+}
+
+.search form{
+	width: 700px;
+}
+
+#search form input.search {
+	margin-top: 9px;
 }
 
 #search form input.text{
@@ -145,12 +154,88 @@ p.hero {
 	vertical-align: middle;
 }
 
+/* Search Page
+============================================================ */
+.search_page{
+	background: #FFF;
+	border-bottom: 1px solid #8a8a8a;
+}
+.search_page .top_bar{
+	background: #f3f3f3;
+	height: 42px;
+	font-family: Arial, Helvetica, sans-serif;
+	color: #8a8a8a;
+	font-size: 18px;
+	padding: 10px 10px;
+	margin: 0 auto;
+}
+.search_page .top_bar form{
+	width: 890px;
+	margin: 0 auto;	
+}
+.search_page .top_bar form input[type="text"]{
+	background: url(/assets/input_search.png);
+	width: 242px;
+	height: 43px;
+	padding: 0 10px;
+	font-size: 12px;
+	font-style: italic;
+}
+
+.search_page .result{
+	color: #8a8a8a;
+	width: 950px;
+	margin: 0 auto;
+	min-height: 400px;
+}
+.search_page .result table{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	margin-top: 20px;
+}
+.search_page .result table td{
+	padding: 10px;
+	vertical-align: middle;
+}
+
+.search_page .result table .col_image{
+	width: 69px;
+}
+.search_page .result table .col_image img{
+	border: solid 1px  #DDD;
+}
+.search_page .result table .title{
+	font-weight: bold;
+}
+.search_page .result table .company{
+	margin-top: 5px;
+	font-size: 12px;
+	font-style: italic;
+}
+.search_page .result table .col_company{
+	width: 304px;
+}
+.search_page .result table .col_price{
+	text-align: center;
+	width: 20px;
+	vertical-align: middle;
+}
+.search_page .result table .col_city{
+	width: 125px;
+}
+.search_page .result table .col_more{
+	text-align: right;
+	width: 400px;
+}
+.search_page .result table .gray{
+	background-color: #efefef;
+}
+
 /* Footer
 ============================================================ */
 footer {
 	background: url(/assets/footer-back.png);
 	height: 50px;
-	margin-top: 200px;
 }
 
 footer ul {
