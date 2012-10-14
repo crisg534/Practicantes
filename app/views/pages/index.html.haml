@@ -1,18 +1,18 @@
 %p.hero
-  Busca y encuentra tus 
+  Encuentra  Practicas Empresariales 
   %br
-  Practicas Empresariales de acuerdo a:
+  Acordes a tu Perfil Profesional
 #search
   .wrapper
     .wrapper
       = form_tag search_path, method: :post do
-        %label Yo se
+        %label Yo sé
         = text_field_tag :skills, '', :class => "first text"
         %label.middle_label Yo quiero aprender
         = text_field_tag :wanted_skills, '', :class => "second text"
         = submit_tag "", :class => "search"
 .visitanos
-  Visitanos en
+  Visítanos en
   .icons
     = link_to image_tag('/assets/fb.png'), 'https://www.facebook.com/Practicantes', target: '_blank'
     

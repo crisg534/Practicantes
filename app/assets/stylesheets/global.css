@@ -96,9 +96,9 @@ p.hero {
 	color: #FFF;
 	text-align: center;
 	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
-	font-size: 30px;
-	line-height: 46px;
-	text-shadow: 1px 1px 2px #838383;
+	font-size: 36px;
+	line-height: 50px;
+	text-shadow: 2px 2px 1px #000;
 }
 
 .visitanos{
@@ -109,7 +109,7 @@ p.hero {
 }
 .visitanos .icons{
 	clear: both;
-	margin-top: 5px;
+	margin-top: 10px;
 }
 
 /* Form
@@ -122,7 +122,7 @@ p.hero {
 	width: 930px;
 	height: 62px;
 	margin: 0 auto;
-	margin-top: 54px;
+	margin-top: 64px;
 	padding-left: 20px;
 }
 
@@ -202,7 +202,7 @@ margin-left: 30px;
 	color: #8a8a8a;
 	width: 950px;
 	margin: 0 auto;
-	min-height: 400px;
+	height: 450px;
 }
 .search_page .result table{
 	font-family: Arial, Helvetica, sans-serif;
