@@ -2,7 +2,7 @@
 if City.count == 0
   p "cities seeded"
   City.create(name: "Armenia")
-  City.create(name: "Barranquilla")
+  city = City.create(name: "Barranquilla")
   City.create(name: "Bello")
   City.create(name: "Bogotá")
   City.create(name: "Bucaramanga")
@@ -80,18 +80,18 @@ end
 
 if Enterprise.count == 0
   p "enterprises seeded"
-  Enterprise.create(name: "koombea", nit: "1234567689", address: "calle 1", phone: "5555555", 
+  e1 = Enterprise.create(name: "koombea", nit: "1234567689", address: "calle 1", phone: "5555555", 
     email: "koombea@koombea.com", url: "koombea.com", contact_name:  "jhon do" )
-  Enterprise.create(name: "programers.inc", nit: "987654332", address: "calle 13", phone: "4444444", 
+  e2 =Enterprise.create(name: "programers.inc", nit: "987654332", address: "calle 13", phone: "4444444", 
     email: "programer@programer.com", url: "programer.inc.com", contact_name:  "jhonny dowie" )
 end
 
 if Offer.count == 0
   p "offer seeded"
-  Offer.create(enterprise_id: Enterprise.last.id, name: "porgramador requerido", 
-    description: "programador requerido para turbo pascal", city_id: City.last.id, skills: "turbo pascal",
-     wanted_skills: "C")
-  Offer.create(enterprise_id: Enterprise.first.id, name: "porgramador requerido", 
-    description: "programador requerido para ruby on rails", city_id: City.first.id, 
-    skills: "ruby, rails, ruby on rails, ror", wanted_skills: "javascript, jquery")
+  Offer.create(enterprise_id: e1.id, name: "porgramador requerido", 
+    description: "programador requerido para turbo pascal", city_id: City.last.id, skill_list: "turbo pascal,",
+     wanted_skill_list: "C,")
+  Offer.create(enterprise_id: e2.id, name: "porgramador requerido", 
+    description: "programador requerido para ruby on rails", city_id: City.last.id, 
+    skill_list: "ruby, rails, ruby on rails, ror,", wanted_skill_list: "javascript, jquery,")
 end

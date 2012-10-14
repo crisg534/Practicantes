@@ -11,7 +11,7 @@
 #
 
 class Profile < ActiveRecord::Base
-  attr_accessible :career_id, :name, :skills
+  attr_accessible :career_id, :name, :skill_list
 
   #relations
   belongs_to :career
