@@ -57,21 +57,25 @@ if Profile.count == 0
   Profile.create(name: "Administración de redes", career_id: c1.id)
   Profile.create(name: "Diseño e implementación de soluciones telemáticas", career_id: c1.id)
   Profile.create(name: "Área de gestión tecnológica", career_id: c1.id)
-  Profile.create(name: "Evaluación y aplicación de tecnologías de hardware y software en las organizaciones", career_id: c1.id)
-  Profile.create(name: "Creación de empresas de manejo computarizado de información y de las actividades que de él se deriven", career_id: c1.id)
+  Profile.create(name: "Evaluación y aplicación de tecnologías de hardware y software", career_id: c1.id)
+  Profile.create(name: "Creación de empresas de manejo computarizado de información", career_id: c1.id)
   Profile.create(name: "Administración de sistemas de información", career_id: c1.id)
   Profile.create(name: "Área de investigación aplicada a proyectos informáticos", career_id: c1.id)
 
-  Profile.create(name: "Gráfico", career_id: c2.id)
-  Profile.create(name:"Crear proyectos de comunicación visual, utilizando la imagen como el recurso de más alto poder comunicativo y estético.", career_id: c2.id)
-  Profile.create(name:"Participar en procesos de investigación, conceptualización y desarrollo de proyectos creativos que aborden problemáticas de la comunicación gráfica.", career_id: c2.id)
-  Profile.create(name:"Crear proyectos audiovisuales, electrónicos e interactivos, por medio de aplicaciones informáticas, aplicables a soluciones comunicacionales tales como video, multimedia, web, cine y televisión.", career_id: c2.id)
-  Profile.create(name:"Diseñar y diagramar información, entre ellos gráficas, textos, imágenes, ilustraciones en diferentes medios editoriales como libros, revistas, periódicos y demás publicaciones en medios impresos o electrónicos.", career_id: c2.id)
-  Profile.create(name:"Diseñar proyectos de identidad visual, que impliquen la creación de la imagen de productos y servicios tangibles o intangibles, con distintivos significables en sus procesos de comunicación.", career_id: c2.id)
-  Profile.create(name:"Diseñar, planear y coordinar campañas y piezas publicitarias en diferentes medios, muestras o exhibiciones y espacios comerciales.", career_id: c2.id)
-  Profile.create(name:"Participar en la formulación y desarrollo de proyectos de investigación relacionados con la historia y teoría de la imagen y la comunicación o el desarrollo de proyectos experimentales de creación gráfica y visual.", career_id: c2.id)
-  Profile.create(name:"Crear sistemas de orientación a través de la construcción de piezas informativas e infográficas que logren generar hábitos en el manejo, desplazamiento  y uso de los diferentes espacios.", career_id: c2.id)
-  Profile.create(name:"Mantener una actitud de compromiso y responsabilidad social en el ejercicio de la profesión y dentro de equipos de trabajo multidisciplinario, para contribuir al desarrollo de la cultura visual de la sociedad.", career_id: c2.id)
+  Profile.create(name: "Agencias de publicidad", career_id: c2.id)
+  Profile.create(name: "Talleres de artes gráficas o editoriales de prensa, revistas y libros", career_id: c2.id)
+  Profile.create(name: "Compañías de pre-prensa digital", career_id: c2.id)
+  Profile.create(name: "Canales de televisión", career_id: c2.id)
+  Profile.create(name: "Productoras audiovisuales.", career_id: c2.id)
+  Profile.create(name: "Oficinas de Diseño Gráfico Publicitario.", career_id: c2.id)
+  Profile.create(name: "Prensa", career_id: c2.id)
+  Profile.create(name: "Instituciones gubernamentales.", career_id: c2.id)
+  Profile.create(name: "Instituciones educativas y culturales.", career_id: c2.id)
+  Profile.create(name: "Productoras de eventos.", career_id: c2.id)
+  Profile.create(name: "Ejercicio Independiente de la Profesión.", career_id: c2.id)
+  Profile.create(name: "Docencia.", career_id: c2.id)
+
+  
 end
 
 if Enterprise.count == 0

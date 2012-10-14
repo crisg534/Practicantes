@@ -1,5 +1,8 @@
 %h2 Search form 
 
+- content_for :javascript do  
+  = javascript_include_tag "/chosen/chosen.jquery.min"
+  = stylesheet_link_tag "/chosen/chosen"
 
 = form_tag url: search_path, method: :post do |f|
   
@@ -32,11 +35,11 @@
     %div
       %strong Ciudad
       %br
-      = text_field_tag :city
+      = select_tag :city_id_equals, options_from_collection_for_select(City.find(:all), :id, :name), {include_blank: true}
     %div
       %strong Perfil Profesional
       %br
-      = text_field_tag :profile_id
+      = select_tag :profile_id_in, options_from_collection_for_select(Profile.find(:all), :id, :name), {include_blank: true, multiple: true}
 
   %div
     = submit_tag 'Buscar'

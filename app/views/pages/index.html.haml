@@ -1,0 +1,19 @@
+%p.hero
+  Busca y encuentra tus 
+  %br
+  Practicas Empresariales de acuerdo a:
+.visitanos
+  Visitanos en
+  .icons
+    = link_to image_tag('/assets/fb.png'), 'https://www.facebook.com/Practicantes', target: '_blank'
+    
+    = link_to image_tag('/assets/tw.png'), 'https://twitter.com/PracticantesSW', target: '_blank'
+#search
+  .wrapper
+    .wrapper
+      %form
+        %label Yo se
+        %input.first.text{:name => "skills", :type => "text"}
+          %label Yo quiero aprender
+          %input.second.text{:name => "learn", :type => "text"}
+          %input.search{:type => "submit", :value => ""}

@@ -5,15 +5,24 @@
       %ul
         - @offer.errors.full_messages.each do |msg|
           %li= msg
-
   .field
-    = f.label :name
+    = f.label "Perfil Profesional"
+    = select_tag :profile_ids, options_from_collection_for_select(Profile.find(:all), :id, :name), {include_blank: true, multiple: true}
+  .field
+    = f.label "Qué debe saber?"
+    = text_area_tag :skills
+  .field
+    = f.label "Qué va a aprender?"
+    = text_area_tag :wanted_skills
+  .field
+    = f.label "Ciudad"
+    = select :city ,:city_id, @cities, include_blank: "-"
+  .field
+    = f.label "Titulo de la Oferta (Opcional)"
     = f.text_field :name
   .field
-    = f.label :description
-    = f.text_field :description
-  .field
-    = f.label :city_id, "City"
-    = select :city ,:city_id, @cities
+    = f.label "Descripción (Opcional)"
+    = f.text_area :description, rows: 3
+  
   .actions
-    = f.submit 'Save'
+    = f.submit 'Guardar', :class => "btn btn-primary"

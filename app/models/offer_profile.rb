@@ -15,4 +15,5 @@ class OfferProfile < ActiveRecord::Base
 
   # Relations
   belongs_to :offer
+  belongs_to :profile
 end
