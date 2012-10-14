@@ -31,4 +31,8 @@ class Offer < ActiveRecord::Base
     tagged_with(params[:skills], on: :skills)
       .tagged_with(params[:wanted_skills], on: :wanted_skills)
   end
+
+  def self.search_skills(skill)
+    ActsAsTaggableOn::Tag.search(name_contains: skill).all
+  end
 end

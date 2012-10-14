@@ -8,6 +8,7 @@ Practicantes::Application.routes.draw do
   resources :careers
   resources :areas
   resource :search, only: [:show, :create]
+  resources :skills, only: [:index]
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
