@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
-if City.all.count == 0
+if City.count == 0
+  p "cities seeded"
   City.create(name: "Armenia")
   City.create(name: "Barranquilla")
   City.create(name: "Bello")
@@ -31,17 +32,20 @@ if City.all.count == 0
   City.create(name: "Villavicencio")
 end
 
-if Area.all.count == 0
+if Area.count == 0
+  p "area seeded"
   a1 = Area.create(name: "INGENIERÍA, ARQUITECTURA, URBANISMO Y AFINES")
   a2 = Area.create(name: "BELLAS ARTES")
 end
 
-if Career.all.count == 0
+if Career.count == 0
+  p "carrers seeded"
   c1 = Career.create(name: "Ingeniería de Sistemas, Telemática y Afines", area_id: a1.id)
   c2 = Career.create(name: "Diseño", area_id: a2)
 end
 
-if Career.all.count == 0
+if Profile.count == 0
+  p "profiles seeded"
   Profile.create(name: "Administración de Sistemas de Información", career_id: c1.id)
   Profile.create(name: "Desarrollador Web", career_id: c1.id)
   Profile.create(name: "Análisis, diseño e implementación de sistemas de información", career_id: c1.id)
@@ -68,4 +72,22 @@ if Career.all.count == 0
   Profile.create(name:"Participar en la formulación y desarrollo de proyectos de investigación relacionados con la historia y teoría de la imagen y la comunicación o el desarrollo de proyectos experimentales de creación gráfica y visual.", career_id: c2.id)
   Profile.create(name:"Crear sistemas de orientación a través de la construcción de piezas informativas e infográficas que logren generar hábitos en el manejo, desplazamiento  y uso de los diferentes espacios.", career_id: c2.id)
   Profile.create(name:"Mantener una actitud de compromiso y responsabilidad social en el ejercicio de la profesión y dentro de equipos de trabajo multidisciplinario, para contribuir al desarrollo de la cultura visual de la sociedad.", career_id: c2.id)
+end
+
+if Enterprise.count == 0
+  p "enterprises seeded"
+  Enterprise.create(name: "koombea", nit: "1234567689", address: "calle 1", phone: "5555555", 
+    email: "koombea@koombea.com", url: "koombea.com", contact_name:  "jhon do" )
+  Enterprise.create(name: "programers.inc", nit: "987654332", address: "calle 13", phone: "4444444", 
+    email: "programer@programer.com", url: "programer.inc.com", contact_name:  "jhonny dowie" )
+end
+
+if Offer.count == 0
+  p "offer seeded"
+  Offer.create(enterprise_id: Enterprise.last.id, name: "porgramador requerido", 
+    description: "programador requerido para turbo pascal", city_id: City.last.id, skills: "turbo pascal",
+     wanted_skills: "C")
+  Offer.create(enterprise_id: Enterprise.first.id, name: "porgramador requerido", 
+    description: "programador requerido para ruby on rails", city_id: City.first.id, 
+    skills: "ruby, rails, ruby on rails, ror", wanted_skills: "javascript, jquery")
 end

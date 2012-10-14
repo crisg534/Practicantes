@@ -41,8 +41,7 @@ class OffersController < ApplicationController
   # POST /offers
   # POST /offers.json
   def create
-    offer_params = params[:offer]
-    offer_params[:enterprise_id] = current_enterprise
+    params[:offer][:enterprise_id] = current_enterprise
     @offer = Offer.new(params[:offer])
 
     respond_to do |format|
