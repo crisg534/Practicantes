@@ -15,7 +15,7 @@
 
 class Offer < ActiveRecord::Base
   attr_accessible :city_id, :description, :enterprise_id, :name,
-    :skills, :wanted_skills, :offers_attributes
+    :skills, :wanted_skills, :offers_attributes, :skill_list, :wanted_skill_list
 
   #relations
   belongs_to :enterprise
