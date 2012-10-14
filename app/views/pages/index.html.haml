@@ -1,0 +1,8 @@
+.hero-unit
+  %h1 Practicantes
+- if student_signed_in?
+  = link_to "Salir", destroy_student_session_path, :method => :delete ,:class=>"btn btn-info"
+  = link_to "Editar mi perfil", edit_student_registration_path, :method => :get ,:class=>"btn btn-info"
+- if enterprise_signed_in?
+  = link_to "Salir", destroy_enterprise_session_path, :method => :delete ,:class=>"btn btn-info"
+  = link_to "Editar mi perfil", edit_enterprise_registration_path, :method => :get ,:class=>"btn btn-info"

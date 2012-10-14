@@ -1,8 +1,7 @@
 function toggleAdvanced(){
   $("#advanced_search").slideToggle()
-
-  $('#city').tagsInput({
-    width: 'auto',
-    autocomplete_url:'/cities'
-  });
 }
+
+$(function(){
+  $('#city_id_equals, #profile_id_in').chosen();
+})

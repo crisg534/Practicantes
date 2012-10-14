@@ -2,7 +2,7 @@ class CitiesController < ApplicationController
   # GET /cities
   # GET /cities.json
   def index
-    @cities = City.search(params[:name])
+    @cities = City.name_search(params[:term])
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @cities.as_api_response(:list) }
