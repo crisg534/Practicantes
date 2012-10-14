@@ -19,4 +19,13 @@ class Profile < ActiveRecord::Base
 
   acts_as_taggable_on :skills
 
+  scope :name_search, lambda { |name| search(name_contains: name).all }
+
+  acts_as_api
+
+  api_accessible :list do |template|
+    template.add :id
+    template.add :name
+  end
+
 end

@@ -9,6 +9,8 @@
 #  city_id       :integer
 #  created_at    :datetime         not null
 #  updated_at    :datetime         not null
+#  skills        :string(255)
+#  wanted_skills :string(255)
 #
 
 class Offer < ActiveRecord::Base
@@ -27,6 +29,6 @@ class Offer < ActiveRecord::Base
   def self.search(params)
     # search(params)
     tagged_with(params[:skills], on: :skills)
-      .tagged_with(params[:wanted_skills], on: :wnated_skills)
+      .tagged_with(params[:wanted_skills], on: :wanted_skills)
   end
 end

@@ -13,6 +13,7 @@ gem 'haml',                   '>= 3.0.0'
 gem "twitter-bootstrap-rails",'2.1.3'
 gem 'meta_search',            '~> 1.1.3'
 gem 'acts-as-taggable-on', '~> 2.3.1'
+gem 'acts_as_api'
 
 # Gems used only for assets and not required
 # in production environments by default.
