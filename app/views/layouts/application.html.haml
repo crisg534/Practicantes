@@ -2,6 +2,10 @@
 %html
   %head
     %meta{:charset => "utf-8"}
+      %meta{:content => "http://www.practicantes.co/img/logo_square.png", :property => "og:image"}/
+      %meta{:content => "Practicantes.co", :property => "og:title"}/
+      %meta{:content => "http://www.practicantes.co", :property => "og:url"}/
+      %meta{:content => "Practicantes.co", :property => "og:site_name"}/
       %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}
         %title= content_for?(:title) ? yield(:title) : "Practicantes"
         = csrf_meta_tags
