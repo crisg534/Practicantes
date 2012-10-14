@@ -13,8 +13,19 @@ html {
 	background-size: cover;
 }
 
+* {
+	margin: 0;
+}
+
+html, body {
+	height: 100%;
+}
+
 #wrapper {
-	margin: 0 auto;
+	min-height: 100%;
+	height: auto !important;
+	height: 100%;
+	margin: 0 auto -50px; /* the bottom margin is the negative value of the footer's height */
 }
 
 /* Header
@@ -86,6 +97,7 @@ p.hero {
 	text-align: center;
 	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
 	font-size: 30px;
+	line-height: 46px;
 	text-shadow: 1px 1px 2px #838383;
 }
 
@@ -94,7 +106,6 @@ p.hero {
 	color: #FFF;
 	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
 	margin-top: 50px;
-	margin-bottom: 180px;
 }
 .visitanos .icons{
 	clear: both;
@@ -129,7 +140,7 @@ p.hero {
 .search{
 	background: url(/assets/search-btn.png);
 	background-repeat: no-repeat;
-	width: 140px;
+	width: 126px;
 	height: 43px;
 	text-align: center;
 }
@@ -150,10 +161,15 @@ p.hero {
 	float: right;
 }
 #search form label{
-	padding-top: 10px;
+	padding-top: 12px;
 	vertical-align: middle;
+	display: inline-block;
 }
 
+#search form label.middle_label{
+	margin-right: 12px;
+margin-left: 30px;
+}
 /* Search Page
 ============================================================ */
 .search_page{
@@ -235,7 +251,10 @@ p.hero {
 ============================================================ */
 footer {
 	background: url(/assets/footer-back.png);
-	height: 50px;
+}
+
+footer, .push {
+	height: 50px; /* .push must be the same height as .footer */
 }
 
 footer ul {
@@ -254,3 +273,4 @@ footer ul li a {
 	font-size: 13px;
 	text-decoration: none;
 }
+
