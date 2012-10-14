@@ -15,7 +15,7 @@ class City < ActiveRecord::Base
   #relations
   has_many :offers
 
-  scope :search, lambda { |name| search(name_contains: name).all }
+  scope :name_search, lambda { |name| search(name_contains: name).all }
 
   acts_as_api
 
