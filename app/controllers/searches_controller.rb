@@ -5,6 +5,7 @@ class SearchesController < ApplicationController
   end
 
   def create
-    respond_with Offer.search(params)
+    @offers = Offer.search(params)
+    render "show"
   end
 end

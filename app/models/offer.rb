@@ -30,10 +30,14 @@ class Offer < ActiveRecord::Base
   accepts_nested_attributes_for :profiles, :reject_if => :reject_profile,
     :allow_destroy => true
 
-  def self.search(params)
+  def self.search(params = nil)
     # search(params)
-    tagged_with(params[:skills], on: :skills)
-      .tagged_with(params[:wanted_skills], on: :wanted_skills)
+    unless params.blank?
+      scope = all
+      scope += tagged_with(params[:skills], on: :skills) if params[:skills].present?
+      scope += tagged_with(params[:wanted_skills], on: :wanted_skills) if params[:wanted_skills].present?
+    end
+    scope
   end
 
   def self.search_skills(skill)
