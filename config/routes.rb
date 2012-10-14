@@ -1,8 +1,4 @@
 Practicantes::Application.routes.draw do
-  get "search/show"
-
-  get "search/create"
-
   devise_for :students
   devise_for :enterprises
 
@@ -12,8 +8,6 @@ Practicantes::Application.routes.draw do
   resources :careers
   resources :areas
   resource :search, only: [:show, :create]
-
-  get "pages/index"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

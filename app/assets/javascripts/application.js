@@ -11,6 +11,8 @@
 // GO AFTER THE REQUIRES BELOW.
 //
 //= require jquery
+//= require jquery-ui
 //= require jquery_ujs
+//= require jquery.tagsinput.min
 //= require twitter/bootstrap
 //= require_tree .
