@@ -11,5 +11,5 @@
  *= require_self
  *= require jquery.tagsinput
  *= require jquery-ui.custom
- *= require_tree .
+ *= require global
 */

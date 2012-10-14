@@ -1,5 +1,5 @@
 !!!
-%html{:lang => "en"}
+%html
   %head
     %meta{:charset => "utf-8"}
       %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}
@@ -14,41 +14,72 @@
             %link{:href => "images/apple-touch-icon-72x72.png", :rel => "apple-touch-icon", :sizes => "72x72"}
               %link{:href => "images/apple-touch-icon-114x114.png", :rel => "apple-touch-icon", :sizes => "114x114"}
   %body
-    .navbar.navbar-fixed-top
-      .navbar-inner
-        .container
-          %a.btn.btn-navbar{"data-target" => ".nav-collapse", "data-toggle" => "collapse"}
-            %span.icon-bar
-            %span.icon-bar
-            %span.icon-bar
-          %a.brand{:href => "/"} Practicantes
-          .container.nav-collapse
-            %ul.nav
-              %li= link_to "Empresas", new_enterprise_session_path
-              %li.divider-vertical
-              %li= link_to "Estudiantes", ""
-            - if student_signed_in?
-              %ul.nav.pull-right
-                %li= link_to "Salir", destroy_student_session_path, :method => :delete
-                %li.divider-vertical
-                %li= link_to "Editar Perfil", edit_student_registration_path, :method => :get
-            - if enterprise_signed_in?
-              %ul.nav.pull-right
-                %li= link_to "Salir", destroy_enterprise_session_path, :method => :delete
-                %li.divider-vertical
-                %li= link_to "Editar Perfil", edit_enterprise_registration_path, :method => :get
-          / /.nav-collapse
-    .container
-      .content
-        .row
-          .span9
-            = yield
+    #wrapper
+      %header#header
+        .wrapper
+          %h1
+            %img{:alt => "", :src => "/assets/logo.png"}
+          %ul
+            %li
+              %a.register{:href => "#"} Registrate
+            %li
+              %a.login{:href => "#"} Iniciar sesión
+      
+      = yield
       %footer
-        %p © Company 2012
-    / /container
-    /
-      Javascripts
-      \==================================================
-    / Placed at the end of the document so the pages load faster
-    = javascript_include_tag "application"
-    = yield :javascript
+        .wrapper
+          %ul
+            %li
+              %a{:href => "#"} Nosotros
+            %li
+              %a{:href => "#"} Terminos y Condiciones
+            %li
+              %a{:href => "#"} Ayuda
+            %li
+              %a{:href => "#"} Contacto
+
+
+
+
+
+/ !!!
+/ %html{:lang => "en"}
+/   %body
+/     .navbar.navbar-fixed-top
+/       .navbar-inner
+/         .container
+/           %a.btn.btn-navbar{"data-target" => ".nav-collapse", "data-toggle" => "collapse"}
+/             %span.icon-bar
+/             %span.icon-bar
+/             %span.icon-bar
+/           %a.brand{:href => "/"} Practicantes
+/           .container.nav-collapse
+/             %ul.nav
+/               %li= link_to "Empresas", new_enterprise_session_path
+/               %li.divider-vertical
+/               %li= link_to "Estudiantes", ""
+/             - if student_signed_in?
+/               %ul.nav.pull-right
+/                 %li= link_to "Salir", destroy_student_session_path, :method => :delete
+/                 %li.divider-vertical
+/                 %li= link_to "Editar Perfil", edit_student_registration_path, :method => :get
+/             - if enterprise_signed_in?
+/               %ul.nav.pull-right
+/                 %li= link_to "Salir", destroy_enterprise_session_path, :method => :delete
+/                 %li.divider-vertical
+/                 %li= link_to "Editar Perfil", edit_enterprise_registration_path, :method => :get
+/           / /.nav-collapse
+/     .container
+/       .content
+/         .row
+/           .span9
+/             
+/       %footer
+/         %p © Company 2012
+/     / /container
+/     /
+/       Javascripts
+/       \==================================================
+/     / Placed at the end of the document so the pages load faster
+/     = javascript_include_tag "application"
+/     = yield :javascript

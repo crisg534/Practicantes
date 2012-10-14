@@ -1,4 +1,13 @@
-.hero-unit
-  %h1 Practicantes
-- if enterprise_signed_in?
-  = link_to "Agregar Oferta", new_offer_path, :method => :get ,:class=>"btn btn-primary"
+%p
+  Busca y encuentra tus 
+  %br
+  Practicas Empresariales de acuerdo a:
+#search
+  .wrapper
+    .wrapper
+      %form
+        %label Yo se
+        %input.first.text{:name => "skills", :type => "text"}
+          %label Yo quiero aprender
+          %input.second.text{:name => "learn", :type => "text"}
+          %input.search{:type => "submit", :value => ""}
