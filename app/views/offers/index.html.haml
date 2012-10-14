@@ -12,7 +12,7 @@
 
   - @offers.each do |offer|
     %tr
-      %td= offer.enterprise_id
+      %td= offer.enterprise.try(:name)
       %td= offer.name
       %td= offer.description
       %td= offer.city_id

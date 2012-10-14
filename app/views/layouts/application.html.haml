@@ -24,9 +24,9 @@
           %a.brand{:href => "/"} Practicantes
           .container.nav-collapse
             %ul.nav
-              %li= link_to "Enterprises", new_enterprise_session_path
+              %li= link_to "Empresas", new_enterprise_session_path
               %li.divider-vertical
-              %li= link_to "Students", ""
+              %li= link_to "Estudiantes", ""
             - if student_signed_in?
               %ul.nav.pull-right
                 %li= link_to "Salir", destroy_student_session_path, :method => :delete
