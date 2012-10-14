@@ -3,6 +3,6 @@ function toggleAdvanced(){
 
   $('#city').tagsInput({
     width: 'auto',
-    autocomplete_url:''
+    autocomplete_url:'/cities'
   });
 }
