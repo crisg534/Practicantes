@@ -5,6 +5,7 @@ class SearchesController < ApplicationController
   end
 
   def create
-    render 'show'
+    @offers = Offer.search(params)
+    render "show"
   end
 end

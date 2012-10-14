@@ -81,9 +81,9 @@ end
 if Enterprise.count == 0
   p "enterprises seeded"
   e1 = Enterprise.create(name: "koombea", nit: "1234567689", address: "calle 1", phone: "5555555", 
-    email: "koombea@koombea.com", url: "koombea.com", contact_name:  "jhon do" )
+    email: "koombea@koombea.com", url: "koombea.com", contact_name:  "jhon do", password: "123456")
   e2 =Enterprise.create(name: "programers.inc", nit: "987654332", address: "calle 13", phone: "4444444", 
-    email: "programer@programer.com", url: "programer.inc.com", contact_name:  "jhonny dowie" )
+    email: "programer@programer.com", url: "programer.inc.com", contact_name:  "jhonny dowie", password: "123456" )
 end
 
 if Offer.count == 0

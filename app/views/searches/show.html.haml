@@ -14,54 +14,26 @@
       =# link_to "Búsqueda Avanzada", "javascript:toggleAdvanced()"
   .result
     %table{cellpadding: 0, cellspacing: 0}
-      %tr
-        %td.col_image
-          = image_tag "/assets/form_icon.png"
-        %td.col_company
-          .title
-            Diseño UX, Diseño movil
-          .company
-            Apple Inc
-        %td.col_city
-          = image_tag "/assets/location-icon.png"
-          Barranquilla
-        %td.col_price
-          = image_tag  '/assets/green-money.png'
-        %td.col_more
-          = link_to "" do
-            = image_tag '/assets/details-btn.png'
-      %tr.gray
-        %td.col_image
-          = image_tag "/assets/form_icon.png"
-        %td.col_company
-          .title
-            Diseño UX, Diseño movil
-          .company
-            Apple Inc
-        %td.col_city
-          = image_tag "/assets/location-icon.png"
-          Barranquilla
-        %td.col_price
-          = image_tag  '/assets/green-money.png'
-        %td.col_more
-          = link_to "" do
-            = image_tag '/assets/details-btn.png'
-      %tr
-        %td.col_image
-          = image_tag "/assets/form_icon.png"
-        %td.col_company
-          .title
-            Diseño UX, Diseño movil
-          .company
-            Apple Inc
-        %td.col_city
-          = image_tag "/assets/location-icon.png"
-          Barranquilla
-        %td.col_price
-          = image_tag  '/assets/green-money.png'
-        %td.col_more
-          = link_to "" do
-            = image_tag '/assets/details-btn.png'
+      - @offers.each do |offer|
+        %tr
+          %td.col_image
+            = image_tag "/assets/form_icon.png"
+          %td.col_company
+            .title
+              = offer.name
+            .company
+              = offer.enterprise.try(:name)
+          %td.col_city
+            = image_tag "/assets/location-icon.png"
+            = offer.city.name
+          %td.col_price
+            -if offer.payment
+              = image_tag  '/assets/green-money.png'
+            -else
+              = image_tag  '/assets/grey-money.png'
+          %td.col_more
+            = link_to "" do
+              = image_tag '/assets/details-btn.png'
     / #advanced_search{style: "display:none"}
     /   %div
     /     %strong Remuneración?
