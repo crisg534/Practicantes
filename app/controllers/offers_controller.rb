@@ -43,10 +43,16 @@ class OffersController < ApplicationController
   def create
     offer_params = params[:offer]
     offer_params[:enterprise_id] = current_enterprise
-    @offer = Offer.new(params[:offer])
+    @offer = Offer.new(offer_params)
 
     respond_to do |format|
       if @offer.save
+        @offer.skill_list = params[:skills]
+        @offer.wanted_skill_list = params[:wanted_skills]
+        
+        params[:profile_ids].each do |profile|
+        OfferProfile.create(offer_id: @offer, profile_id: profile)
+        end
         format.html { redirect_to @offer, notice: 'Offer was successfully created.' }
         format.json { render json: @offer, status: :created, location: @offer }
       else

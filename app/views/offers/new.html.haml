@@ -1,5 +1,7 @@
-%h1 New offer
+- content_for :javascript do  
+  = javascript_include_tag "/chosen/chosen.jquery.min"
+  = stylesheet_link_tag "/chosen/chosen"
 
+%h1 Nueva Oferta
 = render 'form'
-
 = link_to 'Back', offers_path
